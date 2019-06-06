@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<div id="topics">
+		<h2>Topics:</h2>
+		<th:block id="topics" th:each="topic : ${topics}">
+			<input type="checkbox" checked="true" th:value="${topic}" />
+			<label th:text="${topic}"></label>
+		</th:block>
+		
+	</div>
+<div>
+Message:
+</div>
+<textarea id="message" rows="10" cols="100"></textarea>
+<button id="send">Send</button>
+
+<div>
+	<span id="response"></span>
+</div>
+
+<script type="text/javascript" src="./js/index.js"></script>
+
+</body>
+
+</html>
