@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.eneiascs.firebase.server.domain.dto.NotificationDTO;
 import com.eneiascs.firebase.server.service.NotificationService;
+import com.google.firebase.messaging.FirebaseMessagingException;
 
 @RestController
 public class NotificationController {
 	@Resource
 	private NotificationService notificationService;
 	@PostMapping("/messaging/send")
-	public String send(@RequestBody NotificationDTO notificationDTO) {
+	public String send(@RequestBody NotificationDTO notificationDTO) throws FirebaseMessagingException {
 		 
 		return notificationService.sendMessage(notificationDTO);
 	}

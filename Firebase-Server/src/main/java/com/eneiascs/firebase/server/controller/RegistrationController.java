@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eneiascs.firebase.server.domain.dto.RegistrationDTO;
+import com.eneiascs.firebase.server.domain.dto.TopicDTO;
 import com.eneiascs.firebase.server.service.RegistrationService;
 import com.eneiascs.firebase.server.service.TopicService;
+import com.google.firebase.messaging.FirebaseMessagingException;
 
 @RestController
 public class RegistrationController {
@@ -27,7 +29,7 @@ public class RegistrationController {
 		return registrationService.register(registration);
 	}
 	@GetMapping("/topics")
-	public List<String> topics() {
+	public List<TopicDTO> topics() {
 		
 		return topicService.findAll();
 	}

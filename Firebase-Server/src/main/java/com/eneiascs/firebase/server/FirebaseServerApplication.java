@@ -55,9 +55,9 @@ public class FirebaseServerApplication {
 		
 
 		List<Topic> topics = new ArrayList<>();
-		topics.add(new Topic("Bom dia"));
-		topics.add(new Topic("Boa Tarde"));
-		topics.add(new Topic("Boa noite"));
+		topics.add(new Topic("bomdia", "Bom dia"));
+		topics.add(new Topic("boatarde", "Boa Tarde"));
+		topics.add(new Topic("boanoite", "Boa noite"));
 		topicService.save(topics);
 		
 	}

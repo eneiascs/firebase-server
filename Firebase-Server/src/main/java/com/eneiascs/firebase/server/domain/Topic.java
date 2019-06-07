@@ -9,14 +9,16 @@ public class Topic {
 	@Id
 	@GeneratedValue
 	private Long id;
+	private String name;
 	private String description;
 	
 	
 	public Topic() {
 		super();
 	}
-	public Topic(String description) {
+	public Topic(String name, String description) {
 		super();
+		this.name = name;
 		this.description = description;
 	}
 	public Long getId() {
@@ -30,6 +32,12 @@ public class Topic {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

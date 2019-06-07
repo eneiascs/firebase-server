@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.eneiascs.firebase.server.domain.Topic;
+import com.eneiascs.firebase.server.domain.dto.TopicDTO;
 import com.eneiascs.firebase.server.repository.TopicRepository;
 import com.eneiascs.firebase.server.service.TopicService;
 @Service
@@ -40,9 +41,15 @@ public class TopicServiceImpl implements TopicService{
 	}
 
 	@Override
-	public List<String> findAll() {
+	public List<TopicDTO> findAll() {
 		
-		return ((List<Topic>)topicRepository.findAll()).stream().map(topic -> topic.getDescription()).collect(Collectors.toList());
+		return ((List<Topic>)topicRepository.findAll()).stream().map(TopicDTO::new).collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Topic> getTopicsDB(List<String> topics) {
+		
+		return topics.stream().map(topic -> topicRepository.findByName(topic).stream().findFirst().orElse(null)).filter(topic -> topic !=null).collect(Collectors.toList());
 	}
 
 }

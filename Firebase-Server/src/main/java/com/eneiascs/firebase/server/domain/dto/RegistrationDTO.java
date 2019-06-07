@@ -17,7 +17,7 @@ public class RegistrationDTO {
 		super();
 		if(registration != null) {
 			this.setToken(registration.getToken());
-			this.setTopics(registration.getTopics().stream().map(topic -> topic.getDescription()).collect(Collectors.toList()));
+			this.setTopics(registration.getTopics().stream().map(topic -> topic.getName()).collect(Collectors.toList()));
 		}
 	}
 	public String getToken() {

@@ -16,4 +16,6 @@ public interface RegistrationService {
 	Registration save(Registration registration);
 
 	RegistrationDTO register(RegistrationDTO registrationDTO);
+
+	Optional<Registration> findCurrentRegistration(String token);
 }

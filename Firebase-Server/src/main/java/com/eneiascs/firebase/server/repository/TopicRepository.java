@@ -8,6 +8,6 @@ import com.eneiascs.firebase.server.domain.Topic;
 
 public interface TopicRepository extends CrudRepository<Topic, Long> {
 
-	List<Topic> findByDescription(String topic);
+	List<Topic> findByName(String topic);
 
 }
